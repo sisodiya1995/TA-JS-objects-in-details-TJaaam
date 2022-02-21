@@ -1,45 +1,45 @@
 
 // Prototypal pattern of object creation
 let bookMethods ={
-     isAnswerCorrect(index) {
-       return index === correctIndex;
+     isAnswerCorrect: function(index) {
+       return index === this.correctIndex;
      }
   ,
-      getCorrectAnswer() {
+      getCorrectAnswer: function() {
 
-       return option[correctIndex];
+       return this.option[this.correctIndex];
      }
 
 }
 
-function createBook(title , option , index) {
+function createBook(title , option , currentIndex) {
 
       let book = Object.create(bookMethods);
        book.title = title;
        book.option = option;
-       correctIndex = 1;
+       book.correctIndex = currentIndex;
       return book;
 }
 
 //Pseudoclassical Pattern
 
-function createBook(title , option , index) {
+function createBook(title , option , currentIndex) {
 
     let book = Object.create(createBook.prototype);
      book.title = title;
      book.option = option;
-     correctIndex = 1;
+     book.correctIndex = currentIndex;
     return book;
 }
 
 createBook.prototype = {
     isAnswerCorrect: function(index) {
-        return index === correctIndex;
+        return index === this.correctIndex;
       }
    ,
        getCorrectAnswer: function() {
  
-        return option[correctIndex];
+        return this.option[this.correctIndex];
       }
 
 } 
@@ -48,10 +48,10 @@ createBook.prototype = {
 class book {
 
 
-    constructor(title ,option , index){
+    constructor(title ,option , currentIndex){
        this.title = title;
        this.option = option ;
-       this.correctIndex =index ;
+       this.correctIndex =currentIndex ;
 
     }
 
