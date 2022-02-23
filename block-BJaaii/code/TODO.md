@@ -27,6 +27,54 @@ Getter
 
 - `length`: returns the current length of the stack.
 
+```js
+ class Stack {
+     constructor(value){
+         this.value = [];
+        
+     }
+    push (value) {
+        this.value.push(value);  
+    }
+    peek(index){
+        if(this.peek.arguments !== "Null"){
+             return this.value[index]
+        } else {
+          return this.value[this.value.length -1]
+        }
+        
+    }
+    pop () {
+        return this.value.pop();
+    }
+    reverse () {
+      return this.value.reverse();
+    }
+    isEmpty (){
+     if (this.value.length === 0){
+         return true;
+     } else {
+         return false;
+     }
+    }
+
+     displayStack () {
+        return this.value.reduce((acc ,cv) => {
+           acc = acc + " " + cv ;  
+          return acc;
+         },"");
+     }
+
+    
+    get length (){
+        return this.value.length;
+    }
+ }
+
+
+
+```
+
 #### Test
 
 ```js
@@ -64,6 +112,49 @@ Getter
 
 - `length`: returns the current length of the stack.
 
+
+```js
+class Queue {
+     constructor(value){
+         this.value = [];
+        
+     }
+    enqueue (value) {
+        this.value.push(value);  
+    }
+    peek(index){
+        if(index){
+             return this.value[index]
+        } else {
+          return this.value[this.value.length -1]
+        }
+        
+    }
+    dequeue () {
+        return this.value.shift();
+    }
+    
+    isEmpty (){
+     if (this.value.length === 0){
+         return true;
+     } else {
+         return false;
+     }
+    }
+
+     displayQueue () {
+        return this.value.reduce((acc ,cv) => {
+           acc = acc + " " + cv ;  
+          return acc;
+         },"");
+     }
+
+    
+    get length (){
+        return this.value.length;
+    }
+ }
+```
 #### Test
 
 ```js
