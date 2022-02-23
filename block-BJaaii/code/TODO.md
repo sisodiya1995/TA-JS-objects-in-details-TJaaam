@@ -36,17 +36,16 @@ Getter
     push (value) {
         this.value.push(value);  
     }
-    peek(index){
-        if(this.peek.arguments !== "Null"){
-             return this.value[index]
-        } else {
-          return this.value[this.value.length -1]
-        }
+    peek(index = this.value.length -1) {
+         
+         return this.value[index]
         
     }
+
     pop () {
         return this.value.pop();
     }
+
     reverse () {
       return this.value.reverse();
     }
@@ -59,12 +58,12 @@ Getter
     }
 
      displayStack () {
-        return this.value.reduce((acc ,cv) => {
-           acc = acc + " " + cv ;  
-          return acc;
-         },"");
-     }
-
+    //     return this.value.reduce((acc ,cv) => {
+    //        acc = acc + " " + cv ;  
+    //       return acc;
+    //      },"");
+    //  }
+      return this.value.join(" ");
     
     get length (){
         return this.value.length;
@@ -122,16 +121,16 @@ class Queue {
     enqueue (value) {
         this.value.push(value);  
     }
-    peek(index){
-        if(index){
+    peek(index = 0){
+        
              return this.value[index]
-        } else {
-          return this.value[this.value.length -1]
-        }
         
     }
+
     dequeue () {
         return this.value.shift();
+        // this.value.splice(0 ,1);
+        // return this.value ;
     }
     
     isEmpty (){
@@ -147,6 +146,8 @@ class Queue {
            acc = acc + " " + cv ;  
           return acc;
          },"");
+
+         //return this.value.join(" ");
      }
 
     
