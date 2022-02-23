@@ -4,6 +4,21 @@
 */
 
 // myMap function goes here
+  map.prototype ={
+    myMap : function(ary) {
+        let finalAry = [];
+        for(let num of ary){
+          finalAry.push(num*2-1);
+        }
+        return finalAry;
+    }
+    
+  }
+   function map (ary){
+      let methodobj = Object.create( map.prototype);
+      methodobj.ary = ary ;
+      return methodobj;
+   }
 
 // Test the myMap function you created above
 
